@@ -32,7 +32,7 @@ $(() => {
       const listGroupUl = $('<ul class="list-group list-group-flush"></ul>');
 
       const listItemPriceLi = $(`<li class="list-group-item text-bg-dark d-flex justify-content-between align-items-center"></li>`);
-      const listItemPriceText = `€ ${item.price}`;
+      const listItemPriceText = `€ ${item.price} (${moment(item.timestamp).format('ll')})`;
       const listItemPriceIcon = $('<i class="fas fa-credit-card"></i>');
       listItemPriceLi.append(listItemPriceText, listItemPriceIcon);
 
