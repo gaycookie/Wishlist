@@ -18,33 +18,39 @@ $(() => {
 
   function renderItems(items) {
     for (item of items) {
-      const itemElement = $(`
-        <div class="col-sm-12 col-md-6 col-xl-3 pb-3">
-          <div class="card text-bg-dark">
-            <div class="card-image">
-              <img src="${item.image}" class="card-img-top" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title mb-0">${item.name}</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item text-bg-dark d-flex justify-content-between align-items-center">
-                € ${item.price}
-                <i class="fas fa-credit-card"></i>
-              </li>
-              <li class="list-group-item text-bg-dark d-flex justify-content-between align-items-center">
-                <a href="${item.link}" target="_blank" class="text-light">Product page on ${item.store}</a>
-                <i class="fas fa-store"></i>
-              </li>
-              <li class="list-group-item text-bg-dark d-flex justify-content-between align-items-center">
-                <a href="${item.manufacturer}" target="_blank" class="text-light">Product Information</a>
-                <i class="fas fa-info-circle"></i>
-              </li>
-            </ul>  
-          </div>
-        </div>
-      `);
-      itemElement.appendTo(itemsElem);
+      const colDiv = $('<div class="col-sm-12 col-md-6 col-xl-3 pb-3"></div>');
+      const cardDiv = $('<div class="card text-bg-dark"></div>');
+
+      const cardImageDiv = $('<div class="card-image"></div>');
+      const cardImageImg = $(`<img class="card-img-top" src="${item.image}" alt="${item.name}" />`);
+      cardImageDiv.append(cardImageImg);
+      
+      const cardBodyDiv = $('<div class="card-body"></div>');
+      const cardTitleH5 = $(`<h5 class="card-title">${item.name}</h5>`);
+      cardBodyDiv.append(cardTitleH5);
+
+      const listGroupUl = $('<ul class="list-group list-group-flush"></ul>');
+
+      const listItemPriceLi = $(`<li class="list-group-item text-bg-dark d-flex justify-content-between align-items-center"></li>`);
+      const listItemPriceText = `€ ${item.price}`;
+      const listItemPriceIcon = $('<i class="fas fa-credit-card"></i>');
+      listItemPriceLi.append(listItemPriceText, listItemPriceIcon);
+
+      const listItemLinkLi = $(`<li class="list-group-item text-bg-dark d-flex justify-content-between align-items-center"></li>`);
+      const listItemLinkText = $(`<a href="${item.link}" class="text-light" target="_blank">Product on ${item.store}</a>`);
+      const listItemLinkIcon = $('<i class="fas fa-store"></i>');
+      listItemLinkLi.append(listItemLinkText, listItemLinkIcon);
+
+      const listItemManuLi = $(`<li class="list-group-item text-bg-dark d-flex justify-content-between align-items-center"></li>`);
+      const listItemManuText = $(`<a href="${item.manufacturer}" class="text-light" target="_blank">Product Specifications</a>`);
+      const listItemManuIcon = $('<i class="fas fa-industry"></i>');
+      listItemManuLi.append(listItemManuText, listItemManuIcon);
+
+      listGroupUl.append(listItemPriceLi, listItemLinkLi, listItemManuLi);
+      cardDiv.append(cardImageDiv, cardBodyDiv, listGroupUl);
+      colDiv.append(cardDiv);
+
+      itemsElem.append(colDiv);
     }
   }
 
