@@ -33,7 +33,7 @@ $(() => {
                 <i class="fas fa-credit-card"></i>
               </li>
               <li class="list-group-item text-bg-dark d-flex justify-content-between align-items-center">
-                <a href="${item.url}" target="_blank" class="text-light">Product page on ${item.store}</a>
+                <a href="${item.link}" target="_blank" class="text-light">Product page on ${item.store}</a>
                 <i class="fas fa-store"></i>
               </li>
               <li class="list-group-item text-bg-dark d-flex justify-content-between align-items-center">
