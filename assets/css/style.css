@@ -1,0 +1,43 @@
+html, body {
+  background-color: rgb(10, 10, 10);
+}
+
+/*.card-img-top, .item-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}*/
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-bottom: 32px;
+  padding-bottom: 3px;
+}
+
+.card .card-image {
+  height: 180px;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -30px;
+  border-radius: 6px;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-image:hover {
+  transform: scale(1.05);
+  transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.form-control, .form-control:focus {
+  /*box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);*/
+  border: #6c757d solid 1px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, 0.125);
+}
