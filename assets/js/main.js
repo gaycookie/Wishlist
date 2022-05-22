@@ -6,7 +6,10 @@ $(() => {
   const importButton = $('#import-button');
   const exportButton = $('#export-button');
 
-  // Load items from localStorage
+  const addModal = $('#add-modal');
+  const formAddForm = $('#add-form');
+  const formClearButton = $('#form-clear');
+
   function loadItemsFromStorage() {
     const items = localStorage.getItem('items');
     if (!items) {
@@ -17,6 +20,7 @@ $(() => {
   }
 
   function renderItems(items) {
+    itemsElem.empty();
     for (item of items) {
       const colDiv = $('<div class="col-sm-12 col-md-6 col-xl-3 pb-3"></div>');
       const cardDiv = $('<div class="card text-bg-dark"></div>');
@@ -68,12 +72,14 @@ $(() => {
   importButton.on('change', () => {
     const file = importButton.prop('files')[0];
     const reader = new FileReader();
+
     reader.onload = () => {
       const items = JSON.parse(reader.result);
       itemsArray.push(...items);
       localStorage.setItem('items', JSON.stringify(itemsArray));
-      renderItems(items);
+      renderItems(itemsArray);
     }
+
     reader.readAsText(file);
   });
 
@@ -84,6 +90,40 @@ $(() => {
     link.download = 'items.json';
     link.href = URL.createObjectURL(blob);
     link.click();
+  });
+
+  formClearButton.on('click', () => {
+    formAddForm.removeClass('was-validated');
+    formAddForm.trigger('reset');
+  });
+
+  formAddForm.on('submit', (e) => {
+    e.preventDefault();
+
+    if (!formAddForm[0].checkValidity()) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      formAddForm.addClass('was-validated');
+      return;
+    }
+
+    itemsArray.unshift({
+      name: $('#form-product-name').val(),
+      store: $('#form-store-name').val(),
+      price: $('#form-price').val(),
+      timestamp: new Date(),
+      image: $('#form-image').val(),
+      link: $('#form-link').val(),
+      manufacturer: $('#form-manufacturer').val(),
+    });
+
+    addModal.modal('hide');
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+    renderItems(itemsArray);
+
+    formAddForm.removeClass('was-validated');
+    formAddForm.trigger('reset');
   });
 
   loadItemsFromStorage();

@@ -51,19 +51,77 @@
   </div>
 
   <div class="modal fade" id="add-modal" aria-hidden="true" aria-labelledby="add-modal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <form class="modal-content text-bg-dark needs-validation" id="add-form" novalidate>
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Add New Item</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Hide this modal and show the first with the button below.
+          <div class="row">
+            <div class="col-4 pb-3">
+              <div class="form-group">
+                <label for="form-product-name" class="form-label">Product Name: </label>
+                <input type="text" class="form-control text-bg-dark" id="form-product-name" placeholder="Example: LG UltraWide" required>
+                <div class="invalid-feedback">
+                  Please provide a valid product name.
+                </div>          
+              </div>
+            </div>
+            <div class="col-4 pb-3">
+              <div class="form-group">
+                <label for="form-store-name" class="form-label">Store Name: </label>
+                <input type="text" class="form-control text-bg-dark" id="form-store-name" placeholder="Example: MediaMarkt" required>
+                <div class="invalid-feedback">
+                  Please provide a valid store name.
+                </div>
+              </div>
+            </div>
+            <div class="col-4 pb-3">
+              <div class="form-group">
+                <label for="form-price" class="form-label">Price: </label>
+                <input type="number" class="form-control text-bg-dark" id="form-price" placeholder="Example: 199,00" required>
+                <div class="invalid-feedback">
+                  Please provide a valid price.
+                </div>
+              </div>
+            </div>
+            <div class="col-12 pb-3">
+              <div class="form-group">
+                <label for="form-image" class="form-label">Image URL: </label>
+                <input type="url" class="form-control text-bg-dark" id="form-image" placeholder="Example: https://www.lg.com/nl/images/monitor/md07522281/gallery/large01.jpg" required>
+                <div class="invalid-feedback">
+                  Please provide a valid image URL.
+                </div>
+              </div>
+            </div>
+            <div class="col-12 pb-3">
+              <div class="form-group">
+                <label for="form-link" class="form-label">Store Page URL: </label>
+                <input type="url" class="form-control text-bg-dark" id="form-link" placeholder="Example: https://www.mediamarkt.nl/nl/product/_lg-29wp60g-b-1691460.html" required>
+                <div class="invalid-feedback">
+                  Please provide a valid store page URL.
+                </div>
+              </div>
+            </div>
+            <div class="col-12 pb-3">
+              <div class="form-group">
+                <label for="form-manufacturer" class="form-label">Manufacturers Page URL: </label>
+                <input type="url" class="form-control text-bg-dark" id="form-manufacturer" placeholder="Example: https://www.lg.com/nl/monitor/lg-29wp60g-b" required>
+                <div class="invalid-feedback">
+                  Please provide a valid manufacturers page URL.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+        <div class="modal-footer border-secondary">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-danger" id="form-clear">Clear</button>
+            <button class="btn btn-success" id="form-save" type="submit">Save & Add</button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
   
