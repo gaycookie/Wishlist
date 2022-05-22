@@ -26,7 +26,7 @@ $(() => {
       cardImageDiv.append(cardImageImg);
       
       const cardBodyDiv = $('<div class="card-body"></div>');
-      const cardTitleH5 = $(`<h5 class="card-title">${item.name}</h5>`);
+      const cardTitleH5 = $(`<h5 class="card-title mb-0">${item.name}</h5>`);
       cardBodyDiv.append(cardTitleH5);
 
       const listGroupUl = $('<ul class="list-group list-group-flush"></ul>');
