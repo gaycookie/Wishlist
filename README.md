@@ -3,7 +3,7 @@
 ## Product object with types
 If you want to see a full example of a list of products, you can check out [example.json](example.json).
 
-```coffee
+```js
 {
   "name": String,
   "price": String,
