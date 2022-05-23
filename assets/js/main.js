@@ -11,12 +11,16 @@ $(() => {
   const formAddForm = $('#add-form');
   const formClearButton = $('#form-clear');
 
+  function orderByTimestamp(items) {
+    return items.sort((a, b) => Date.parse(b.timestamp) - Date.parse(a.timestamp));
+  }
+
   function loadItemsFromStorage() {
     const items = localStorage.getItem('items');
     if (!items) {
-      localStorage.setItem('items', JSON.stringify(itemsArray));
+      localStorage.setItem('items', JSON.stringify(orderByTimestamp(itemsArray)));
     } else {
-      itemsArray.push(...JSON.parse(items));
+      itemsArray.push(...orderByTimestamp(JSON.parse(items)));
     }
   }
 
@@ -63,10 +67,10 @@ $(() => {
     if (searchInput.val().length !== 0) {
       const results = itemsArray.filter(item => item.name.toLowerCase().includes(searchInput.val().toLowerCase()));
       itemsElem.empty();
-      renderItems(results);
+      renderItems(orderByTimestamp(results));
     } else {
       itemsElem.empty();
-      renderItems(itemsArray);
+      renderItems(orderByTimestamp(itemsArray));
     }
   });
 
@@ -78,7 +82,7 @@ $(() => {
       const items = JSON.parse(reader.result);
       itemsArray.push(...items);
       localStorage.setItem('items', JSON.stringify(itemsArray));
-      renderItems(itemsArray);
+      renderItems(orderByTimestamp(itemsArray));
     }
 
     reader.readAsText(file);
@@ -147,5 +151,5 @@ $(() => {
   });
 
   loadItemsFromStorage();
-  renderItems(itemsArray);
+  renderItems(orderByTimestamp(itemsArray));
 });
