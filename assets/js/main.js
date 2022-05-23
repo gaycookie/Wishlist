@@ -5,6 +5,7 @@ $(() => {
   const searchInput = $('#search-input');
   const importButton = $('#import-button');
   const exportButton = $('#export-button');
+  const clearButton = $('#clear-button');
 
   const addModal = $('#add-modal');
   const formAddForm = $('#add-form');
@@ -90,6 +91,25 @@ $(() => {
     link.download = 'items.json';
     link.href = URL.createObjectURL(blob);
     link.click();
+  });
+
+  clearButton.on('click', () => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, clear it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.setItem('items', JSON.stringify([]));
+        itemsArray.length = 0;
+        itemsElem.empty();
+        Swal.fire('Yeeted!', 'Your items have been cleared.', 'success')
+      }
+    })
   });
 
   formClearButton.on('click', () => {
