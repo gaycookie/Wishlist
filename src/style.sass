@@ -1,0 +1,32 @@
+@import 'bulma/bulma'
+
+.tags-input
+  background-color: rgba(0, 0, 0, .1)
+  border-color: rgba(0, 0, 0, .2)
+
+  &:hover, &:focus
+    background-color: rgba(0, 0, 0, .2)
+    border-color: rgba(0, 0, 0, .3)
+    box-shadow: 0 0 0 .125em rgba(72, 72, 72, .5)
+
+.tags-input .input
+  background-color: transparent
+  border-color: transparent
+  color: rgba(255, 255, 255, 0.8)
+
+  &::placeholder
+    color: rgba(255, 255, 255, .5)
+
+@import '@creativebulma/bulma-tagsinput'
+
+html, body
+  background-color: rgb(20, 20, 20)
+  
+.has-text-muted
+  color: rgba(255, 255, 255, 0.4)
+
+.form-control, .form-select, .form-control:focus, .form-select:active
+  border: #6c757d solid 1px
+
+.form-control:focus, .form-select:focus
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, 0.125)
