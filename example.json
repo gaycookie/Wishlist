@@ -1,0 +1,76 @@
+[
+  {
+      "id": "EX1_tk28",
+      "name": "Epilator Series 8000",
+      "price": "€ 87,99",
+      "quantity": 1,
+      "timestamp": "2022-05-23T07:08:17.525Z",
+      "tags": [
+          "Beauty",
+          "Care",
+          "Technologie"
+      ],
+      "image": "https://images.philips.com/is/image/PhilipsConsumer/BRE735_00-IMS-nl_NL?$&wid=960",
+      "link": "https://www.philips.nl/c-p/BRE735_00/epilator-series-8000-wet-dry-epileerapparaat",
+      "specs": "https://www.philips.nl/c-p/BRE735_00/epilator-series-8000-wet-dry-epileerapparaat"
+  },
+  {
+      "id": "EX1_tk29",
+      "name": "Synology RT6600ax",
+      "price": "€ 324,95",
+      "quantity": 1,
+      "timestamp": "2022-05-22T19:53:03.628Z",
+      "tags": [
+          "Router",
+          "Network",
+          "Technologie"
+      ],
+      "image": "https://www.synology.com/img/products/detail/RT6600ax/ultra_fast_router_1.webp",
+      "link": "https://azerty.nl/product/synology/4727340/rt6600ax-tri-band-wi-fi-6-draadloze-router-3-poorts-switch",
+      "specs": "https://www.synology.com/nl-nl/products/RT6600ax"
+  },
+  {
+      "id": "EX1_tk30",
+      "name": "Huawei WiFi AX3",
+      "price": "€ 59,99",
+      "quantity": 1,
+      "timestamp": "2022-05-22T17:30:30.451Z",
+      "tags": [
+          "Router",
+          "Network",
+          "Technologie"
+      ],
+      "image": "https://tweakers.net/i/N3m7F7H7fbHfSd8xjpR4K1w1q54=/i/2004311670.jpeg",
+      "link": "https://www.amazon.nl/dp/B0922SBPN3/ref=asc_df_B0922SBPN31653154080000/",
+      "specs": "https://consumer.huawei.com/en/routers/ax3-quad-core/"
+  },
+  {
+      "id": "EX1_tk31",
+      "name": "Ubiquiti EdgeSwitch 5XP",
+      "price": "€ 98,00",
+      "quantity": 2,
+      "timestamp": "2022-05-22T17:30:30.451Z",
+      "tags": [
+          "Switch",
+          "Network",
+          "Technologie"
+      ],
+      "image": "https://tweakers.net/i/zNUJksm1N2pB8oX3V5Znu29LUn4=/i/2004619468.jpeg",
+      "link": "https://www.dustinhome.nl/product/5011088620/edgeswitch-es-5xp",
+      "specs": "https://store.ui.com/collections/operator-edgemax-switches/products/edgeswitch-5xp"
+  },
+  {
+      "id": "EX1_tk32",
+      "name": "LG UltraWide",
+      "price": "€ 199,00",
+      "quantity": 1,
+      "timestamp": "2022-05-22T17:30:30.451Z",
+      "tags": [
+          "Display",
+          "Technologie"
+      ],
+      "image": "https://www.lg.com/nl/images/monitor/md07522281/gallery/large01.jpg",
+      "link": "https://www.mediamarkt.nl/nl/product/_lg-29wp60g-b-1691460.html",
+      "specs": "https://www.lg.com/nl/monitor/lg-29wp60g-b"
+  }
+]
