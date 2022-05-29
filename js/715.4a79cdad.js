@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkwishlist_vue"]=self["webpackChunkwishlist_vue"]||[]).push([[715],{4715:function(e,u,n){n.r(u),n.d(u,{default:function(){return a}});var t=function(){var e=this,u=e.$createElement,n=e._self._c||u;return n("div")},l=[],s={name:"AddProductView"},i=s,r=n(1001),c=(0,r.Z)(i,t,l,!1,null,null,null),a=c.exports}}]);
+//# sourceMappingURL=715.4a79cdad.js.map
