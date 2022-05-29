@@ -18,6 +18,11 @@ const routes = [
     path: '/products/edit',
     name: 'edit-product',
     component: () => import('../views/EditProductView.vue')
+  },
+  {
+    path: '/collection/manage',
+    name: 'manage-collection',
+    component: () => import('../views/ManageCollectionView.vue')
   }
 ]
 

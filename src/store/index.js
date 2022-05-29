@@ -28,8 +28,13 @@ export default new Vuex.Store({
         return product
       });
     },
-    clearProducts(state) {
-      state.products = [];
+    importCollection(state, products) {
+      products.forEach(product => {
+        state.products.push(product);
+      });
+    },
+    clearCollection(state) {
+      state.products.length = 0;
     },
     sortByTimestamp(state) {
       state.products = state.products.sort((a, b) => {
@@ -59,8 +64,11 @@ export default new Vuex.Store({
     updateProduct({ commit }, product_name, new_product) {
       commit('updateProduct', product_name, new_product);
     },
-    clearProducts({ commit }) {
-      commit('clearProducts');
+    importCollection({ commit }, products) {
+      commit('importCollection', products);
+    },
+    clearCollection({ commit }) {
+      commit('clearCollection');
     },
     sortByTimestamp({ commit }) {
       commit('sortByTimestamp');

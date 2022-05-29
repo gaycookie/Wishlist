@@ -11,12 +11,7 @@ nav.navbar.is-link.is-fixed-top(role="navigation" aria-label="main navigation")
         router-link.navbar-item(to="/" :class="{ 'is-active' : $route.path === '/' }" @click.native="$store.commit('setSearch', '')") 
           i.fa.fa-home
         router-link.navbar-item(to="/products/add" :class="{ 'is-active' : $route.path === '/products/add' }") Add product
-        .navbar-item.has-dropdown.is-hoverable
-          a.navbar-link(:class="{ 'is-active' : $route.path.startsWith('/collection') }") Collection
-          .navbar-dropdown
-            router-link(to="/collection/import" :class="{ 'is-active' : $route.path === '/collection/import' }").navbar-item Import collection
-            router-link(to="/collection/export" :class="{ 'is-active' : $route.path === '/collection/export' }").navbar-item Export collection
-            router-link(to="/collection/clear" :class="{ 'is-active' : $route.path === '/collection/clear' }").navbar-item Clear collection
+        router-link.navbar-item(to="/collection/manage" :class="{ 'is-active' : $route.path === '/collection/manage' }") Manage collection
       .navbar-end
         .navbar-item.field
           .control.has-icons-left.clearable-input

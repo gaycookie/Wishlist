@@ -102,13 +102,10 @@ export default {
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Yes, yeet it!',
+        buttonsStyling: false,
         customClass: {
           confirmButton: 'button is-danger',
           cancelButton: 'button is-light ml-2',
-        },
-        buttonsStyling: false,
-        showClass: {
-          popup: 'animate__animated animate__fadeIn'
         }
       }).then((result) => {
         if (result.value) {
